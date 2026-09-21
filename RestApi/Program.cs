@@ -38,7 +38,8 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "http://example.com",
-            "http://www.contoso.com"
+            "http://www.contoso.com",
+            "http://localhost:3000"
         );
     });
 });
