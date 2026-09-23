@@ -127,12 +127,12 @@ namespace RestApi.Controllers
             }
             // Password = "' or 1 = 1 --";
             // hasan@mail.com'--
-            var query = "select * from users where Username = '" + userDto.Username + "' and Password = '" + userDto.Password + "'";
-            Console.WriteLine(query);
-            var raw = _context.Users.FromSqlRaw(query).FirstOrDefault();
+            //var query = "select * from users where Username = '" + userDto.Username + "' and Password = '" + userDto.Password + "'";
+            //Console.WriteLine(query);
+            //var raw = _context.Users.FromSqlRaw(query).FirstOrDefault();
 
-            //var query = "select * from users where Username = {0} and Password = {1}";
-            //var raw = _context.Users.FromSqlRaw(query, userDto.Username, userDto.Password).First();
+            var query = "select * from users where Username = {0} and Password = {1}";
+            var raw = _context.Users.FromSqlRaw(query, userDto.Username, userDto.Password).FirstOrDefault();
             return Ok(new { raw });
         }
 
